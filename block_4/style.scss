@@ -1,0 +1,132 @@
+@use "./base/normalize";
+@use "./base/mixins";
+// @use "sass:math";
+// @use "sass:color";
+@use "./base/init";
+
+.myform {
+  // background: red url("https://mobimg.b-cdn.net/v3/fetch/8e/8ec4d43ff9ddc0a87df0d7ee754c9dc8.jpeg?w=1470&r=0.5625") top center / cover no-repeat;
+  height: 50vh;
+  width: 30%;
+}
+
+.blur-wrapper {
+  background: rgba(57, 57, 57, 0.5);
+  backdrop-filter: blur(1px) grayscale(70%) brightness(60%);
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+// .container {
+//   font-family: 'Roboto';
+//   width: 600px;
+//   margin: 30px auto 0;
+//   display: block;
+//   background: #FFF;
+//   padding: 10px 50px 50px;
+// }
+
+
+// ====================================
+.myinput {
+  $_color__input-border: #757575;
+  $_color__label: #ed0d0d;
+  $_color__label-active: #ffffff;
+  $_color__bottom-bar: #5264AE;
+
+  // .myinput__wrapper
+  &__wrapper {
+    position: relative;
+    margin-bottom: 45px;
+  }
+
+  // .myinput__input
+  &__input {
+    display: block;
+    width: 300px;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid $_color__input-border;
+    background: transparent;
+  }
+
+  // .myinput__input:focus
+  &__input:focus {
+    outline: none;
+  }
+
+  // .myinput__label
+  &__label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    pointer-events: none;
+    color: $_color__label;
+    transition: 0.2s ease all;
+  }
+
+  // .myinput__input:focus ~ .myinput__label,
+  // .myinput__input:valid ~ .myinput__label
+  &__input:focus~&__label,
+  &__input:valid~&__label {
+    top: -16px;
+    font-size: 14px;
+    color: $_color__label-active;
+  }
+
+  // .myinput__bottom-bar
+  &__bottom-bar {
+    position: relative;
+    display: block;
+    width: 300px;
+
+    // .myinput__bottom-bar::before
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 1px;
+      background: $_color__bottom-bar;
+      transition: 0.2s ease all;
+    }
+
+    // .myinput__bottom-bar::before
+    &:before {
+      left: 50%;
+    }
+
+    // .myinput__bottom-bar::after
+    &:after {
+      right: 50%;
+    }
+  }
+
+  // .myinput__input:focus ~ .myinput__bottom-bar::before,
+  // .myinput__input:focus ~ .myinput__bottom-bar::after
+  &__input:focus~&__bottom-bar:before,
+  &__input:focus~&__bottom-bar:after {
+    width: 50%;
+  }
+
+}
+
+.ring {
+  display: flex;
+  $_wrapper-width: 200;
+  height: $_wrapper-width + px;
+  width: $_wrapper-width*5 + px;
+  outline:1px solid #000;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(5px 5px 5px rgb(104, 104, 104));
+  }
+}
+
