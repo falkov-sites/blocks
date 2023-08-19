@@ -17,6 +17,7 @@
   position: relative;
   width: 80px;
   height: 34px;
+  /* transform: rotate(-90deg); */
 }
 
 .switch__input {
@@ -40,13 +41,13 @@
 .switch__slider::before {
   content: "";
   position: absolute;
-  width: 26px;
-  height: 26px;
+  width: 20px;
+  height: 20px;
   left: 4px;
-  bottom: 4px;
+  bottom: 7px;
   background-color: white;
   border-radius: 50%;
-  transition: left .5s cubic-bezier(.7, -0.92, .36, 1.78) 0s;
+  transition: left .2s ease 0s;
 }
 
 .switch__input:focus+.switch__slider {
@@ -58,5 +59,6 @@
 }
 
 .switch__input:checked+.switch__slider::before {
+  /* background-color: #37ff00; */
   left: 50px;
 }
