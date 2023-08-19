@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="script.js" defer type="module"></script>
+   <title>- 5 -</title>
+</head>
+
+<body>
+
+  <div class="circle-progress-bar">
+    <svg class="mysvg" viewBox="0 0 400 400" width="400" height="400">
+      <defs>
+        <!-- <linearGradient id="gradient" gradientTransform="rotate(90)"> -->
+        <linearGradient id="gradient">
+          <stop offset="0%" stop-color="red"></stop>
+          <stop offset="25%" stop-color="blue"></stop>
+          <stop offset="50%" stop-color="yellow"></stop>
+          <stop offset="75%" stop-color="magenta"></stop>
+          <stop offset="100%" stop-color="green"></stop>
+        </linearGradient>
+      </defs>
+  
+      <!-- <g fill="transparent" stroke="url(#gradient)" stroke-width="2"> -->
+      <g fill="white" stroke="url(#gradient)" stroke-width="1%">
+        <circle cx="50%" cy="50%" r="40%"></circle>
+        <circle class="bar" cx="50%" cy="50%" r="35%" stroke-width="8%" stroke="url(#gradient)"></circle>
+        <circle cx="50%" cy="50%" r="30%"></circle>
+      </g>
+    </svg>
+  
+    <div class="procent">85%</div>
+  </div>
+
+
+</body>
+
+</html>
